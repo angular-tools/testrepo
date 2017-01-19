@@ -1,0 +1,24 @@
+<html>
+<body ng-app="testApp" ng-controller="testController">
+    <div ng-include src="data.src"></div>
+
+    <p align="center"><button ng-click="test()">test</button></p>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+
+<script type="text/ng-template" id="test.html">
+    hello
+</script>
+
+<script>
+    angular.module('testApp', [])
+        .controller('testController', function ($scope) {
+            $scope.data = {};
+            $scope.test = function () {
+                $scope.data.src = 'test.html';
+            };
+        })
+</script>
+
+</html>
